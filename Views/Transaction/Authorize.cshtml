@@ -1,0 +1,17 @@
+﻿@model CCFD.Models.Transaction
+@{
+    ViewBag.Title = "Authorize";
+}
+
+<h2>Authorize</h2>
+<div class="align-content-center">
+    <div class="border">
+        <h1 class="display-1">CCFD</h1>
+        <p>
+            You are about to authorize R @Model.TotalAmount transaction from @Model.MerchantId. Do you want to continue?
+        </p>
+        <input type="button" value="APPROVE" onclick="@("window.location.href='" + @Url.Action("approve", "transaction") + "'");" />
+        <input type="button" value="DECLINE" onclick="@("window.location.href='" + @Url.Action("decline", "transaction") + "'");" />
+    </div>
+</div>
+

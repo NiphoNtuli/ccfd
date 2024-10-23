@@ -1,0 +1,26 @@
+﻿@using CCFD.Models
+@model ReportViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Report</h2>
+<h5>Please select one report and generate.</h5>
+
+@using (Html.BeginForm("Generate", "Report", FormMethod.Post))
+{
+    <div class="checkbox">
+        @Html.CheckBoxFor(m => m.FullReport)
+        @Html.LabelFor(m => m.FullReport)
+    </div>
+    <div class="checkbox">
+        @Html.CheckBoxFor(m => m.FraudReport)
+        @Html.LabelFor(m => m.FraudReport)
+    </div>
+    <div class="checkbox">
+        @Html.CheckBoxFor(m => m.CleanReport)
+        @Html.LabelFor(m => m.CleanReport)
+    </div>
+    <input id="Button" type="submit" value="Generate" />
+}
+

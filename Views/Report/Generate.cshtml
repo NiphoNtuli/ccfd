@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CCFD.Models.Transaction>
+@{
+    ViewBag.Title = "Generate";
+}
+
+<h3>@ViewBag.Message</h3>
+
+@*<div><b>Transaction Data Report</b><br /></div>*@
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Merchant Id</th>
+        <th>Location</th>
+        <th>Total Amount</th>
+        <th>Date</th>
+        <th>Customer Id</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.MerchantId</td>
+            <td>@m.Location</td>
+            <td>@m.TotalAmount</td>
+            <td>@m.Date</td>
+            <td>@m.CustomerId</td>
+            <td>@m.Status</td>
+
+        </tr>
+
+    }
+</table>
+
